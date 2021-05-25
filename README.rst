@@ -27,6 +27,10 @@ Quickstart
 .. code-block:: python
 
     from dynamodb_counter import Counter
+
+    # This will attempt to create a boto3 dynamodb client using any ENV variables (eg AWS_PROFILE)
+    # You may pass in a custom client using the client kwarg (see source code)
+
     counter = Counter(table='test-table', PK='users', SK='count')
 
     # Reset the counter
