@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "dynamodb-counter"
+version = "0.1.0"
+description = "An atomic DynamoDB counter"
+authors = ["Imtiaz Mangerah <Imtiaz_Mangerah@a2d24.com>"]
+license = "MIT"
+homepage = "https://github.com/a2d24/dynamodb-counter"
+repository = "https://github.com/a2d24/dynamodb-counter"
+documentation = "https://github.com/a2d24/dynamodb-counter"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+boto3 = {version = "^1.17.23", optional = true}
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.2"
+pytest-cov = "^2.11.1"
+Pygments = "^2.8.1"
+boto3 = "^1.17.23"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.extras]
+boto = ["boto3"]
