@@ -2,7 +2,7 @@ from typing import Set
 
 import boto3
 
-from reserved import RESERVED_KEYWORDS
+from .reserved import RESERVED_KEYWORDS
 from .serializers import serialize, deserialize
 
 
