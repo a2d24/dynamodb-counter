@@ -12,6 +12,7 @@ class Counter:
 
     def __init__(self, table,
                  variable_name='current_count',
+                 client=None,
                  endpoint_url=None,
                  region_name=None,
                  aws_access_key_id=None,
@@ -34,14 +35,17 @@ class Counter:
 
         self._internal_variable_name = self._name_variable(variable_name)
 
-        self._client = boto3.client(
-            'dynamodb',
-            endpoint_url=endpoint_url,
-            region_name=region_name,
-            aws_access_key_id=aws_access_key_id,
-            aws_secret_access_key=aws_secret_access_key,
-            aws_session_token=aws_session_token
-        )
+        if client:
+            self._client = client
+        else:
+            self._client = boto3.client(
+                'dynamodb',
+                endpoint_url=endpoint_url,
+                region_name=region_name,
+                aws_access_key_id=aws_access_key_id,
+                aws_secret_access_key=aws_secret_access_key,
+                aws_session_token=aws_session_token
+            )
 
     def next(self, increment: int=1, retries=3):
 
