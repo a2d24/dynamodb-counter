@@ -11,7 +11,15 @@ and install the required dependencies via `poetry <https://poetry.eustace.io>`_.
 
 .. code-block:: bash
 
-    $ git clone git@github.com:a2d24/dynamodb-counter.git
+    > git clone git@github.com:a2d24/dynamodb-counter.git
+
+Installation
+------------
+.. code-block:: bash
+
+    > pip install dynamodb-counter[boto]
+
+
 
 Quickstart
 ----------
